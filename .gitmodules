@@ -1,0 +1,3 @@
+[submodule "synchrotalk.plugin"]
+	path = synchrotalk.plugin
+	url = https://github.com/Exsul/synchrotalk.plugin
