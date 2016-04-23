@@ -2,7 +2,7 @@
 
 require_once('synchrotalk.plugin/plugin.php');
 
-class connector implements plugin
+abstract class connector implements plugin
 {
   abstract public function log_in($username, $password);
   abstract public function sign_in($token);
