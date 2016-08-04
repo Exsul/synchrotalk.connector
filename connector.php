@@ -45,4 +45,8 @@ abstract class connector implements plugin
         if ($user->id == $user_id)
           return $thread;
   }
+
+  /* This is workaround for restrictions of plugin system. This is breaking ipc
+    but allow to rapidly grow project, without awaiting of better system */
+  abstract public /* auth */ function auth();
 }
