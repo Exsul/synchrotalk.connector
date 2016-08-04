@@ -17,4 +17,21 @@ class user extends owner
 
   // Associative array in template of "WxH" => "URI"
   public /* string[] */ $avatars;
+
+  public /* string */ $status;
+  public /* bool */ $online;
+  public /* string */ $platform;
+
+  /* recognizable platforms
+    - web
+    - mobile web
+    - linux
+    - mobile linux (including android)
+    - macos (commonly osx)
+    - ios (ipad / appletv / etc)
+    - mobile ios (iphone only)
+    - windows
+    - mobile windows
+    - blackberry
+   */
 }
