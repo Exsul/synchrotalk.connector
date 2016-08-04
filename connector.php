@@ -4,15 +4,17 @@ require_once('synchrotalk.plugin/plugin.php');
 
 abstract class connector implements plugin
 {
-  abstract public function log_in($username, $password);
-  abstract public function sign_in($token);
+  abstract public /* user */ function log_in( /* string */ $username, /* string */ $password);
+  abstract public /* user */ function sign_in( /* string */ $token);
 
 
-  abstract public function send_message($to, $what);
-  abstract public function fetch_messages($thread);
-  abstract public function mark_read($thread);
+  abstract public /* object */ function send_message(/* thread_id */ $to, /* string or message */ $what);
+  abstract public /* thread */ function userid_to_thread( /* string */ $user_id );
+
+  abstract public /* message[] */ function fetch_messages( /* string */ $thread_id, /* int */ $skip_pages = 0);
+  abstract public /* object */ function mark_read( /* string */ $thread_id);
 
 
-  abstract public function threads();
-  abstract public function contacts();
+  abstract public /* threads[] */ function threads();
+  abstract public /* users[] */ function contacts();
 }
