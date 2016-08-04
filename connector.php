@@ -26,6 +26,15 @@ abstract class connector implements plugin
 
   abstract public /* object */ function message_send(/* thread_id */ $to, /* string or message */ $what);
 
+  public /* user[] */ function users( /* user_id[] */ $userids )
+  {
+    $ret = [];
+    foreach ($userids as $userid)
+      $ret[] = $this->user($userid);
+
+    return $ret;
+  }
+  abstract public /* user */ function user( /* user_id */ $userid);
   abstract public /* string */ function nickname_to_userid( /* string */ $nickname );
   public /* thread */ function userid_to_thread( /* string */ $user_ref )
   {
