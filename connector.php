@@ -1,20 +1,39 @@
 <?php namespace synchrotalk\connector
 
 require_once('synchrotalk.plugin/plugin.php');
+require_once('objects/thread.php');
+require_once('objects/notification.php');
 
 abstract class connector implements plugin
 {
-  public function __construct(/* auth or token */ $auth);
+  abstract public /* user */ function sign_in(/* auth or token */ $auth);
 
-  abstract public /* notification[] */ function notifications();
-  abstract public /* users[] */ function contacts();
-  abstract public /* threads[] */ function threads();
+  public /* notification[] */ function notifications()
+  {}
+  public /* user[] */ function contacts()
+  {}
+  abstract public /* thread[] */ function threads();
   abstract public /* message[] */ function messages( /* string */ $thread_id, /* int */ $skip_pages = 0);
 
 
-  abstract public /* object */ function message_mark_read( /* string */ $thread_id);
+  public /* object */ function message_mark_read( /* string */ $thread_id)
+  {}
+
+  public /* object */ function message_send_first( /* user_id */ $to,  /* string or message */ $what )
+  {
+    return $this->message_send($to, $what);
+  }
+
   abstract public /* object */ function message_send(/* thread_id */ $to, /* string or message */ $what);
 
+  abstract public /* string */ function nickname_to_userid( /* string */ $nickname );
+  public /* thread */ function userid_to_thread( /* string */ $user_ref )
+  {
+    $user_id = $this->nickname_to_userid($nickname);
 
-  abstract public /* thread */ function userid_to_thread( /* string */ $user_id );
+    foreach ($this->threads() as $thread)
+      foreach ($thread->users as $user)
+        if ($user->id == $user_id)
+          return $thread;
+  }
 }

@@ -4,7 +4,7 @@ require_once('synchrotalk.plugin/plugin.php');
 
 abstract class auth implements plugin
 {
-  abstract public /* user */ function sign_in( /* string */ $token);
+  abstract public function sign_in( /* string */ $token);
 
   public /* string[] */ function direct_auth_requirments();
   public /* token */ function direct_auth($requirments);

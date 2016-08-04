@@ -6,6 +6,9 @@
   This part is not designed well, advices are welcomed
  */
 
+require_once('user.php');
+require_once('message.php');
+
 class notification extends object
 {
   public /* optional string */ $thread_id;

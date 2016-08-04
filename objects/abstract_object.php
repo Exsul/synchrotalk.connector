@@ -9,4 +9,9 @@
 class abstract_object
 {
   public /* string */ $id;
+
+  public function __construct($id = null)
+  {
+    $this->id = $id;
+  }
 }

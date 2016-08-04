@@ -8,6 +8,8 @@
   Ownership of multiple users is not currently supported
  */
 
+require_once('owner.php');
+
 class user extends owner
 {
   public /* string */ $nickname;

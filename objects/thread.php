@@ -10,6 +10,7 @@
 
 require_once('object.php');
 require_once('message.php');
+require_once('owner.php');
 
 class thread extends object
 {
