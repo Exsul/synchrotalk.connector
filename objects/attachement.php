@@ -5,7 +5,7 @@
    Anything that not is raw text. (Including real-time video/audio chat).
  */
 
-require('object.php');
+require_once('object.php');
 
 class attachement extends object
 {
