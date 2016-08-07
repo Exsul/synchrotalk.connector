@@ -38,12 +38,15 @@ abstract class connector implements \plugin
   abstract public /* string */ function nickname_to_userid( /* string */ $nickname );
   public /* thread */ function userid_to_thread( /* string */ $user_ref )
   {
-    $user_id = $this->nickname_to_userid($nickname);
+    $user_id = $this->nickname_to_userid($user_ref);
+    if ($user_id == false)
+      $user_id = $user_ref;
 
     foreach ($this->threads() as $thread)
-      foreach ($thread->users as $user)
-        if ($user->id == $user_id)
-          return $thread;
+      if (is_array($thread->users))
+        foreach ($thread->users as $user)
+          if ($user->id == $user_id)
+            return $thread;
   }
 
   /* This is workaround for restrictions of plugin system. This is breaking ipc
