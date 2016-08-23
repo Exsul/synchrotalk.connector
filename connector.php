@@ -6,7 +6,7 @@ require_once('objects/notification.php');
 
 abstract class connector implements \plugin
 {
-  abstract public /* user */ function sign_in(/* auth or token */ $auth);
+  abstract public /* bool */ function sign_in(/* auth or token */ $auth);
 
   public /* notification[] */ function notifications()
   {}
