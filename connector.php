@@ -1,5 +1,8 @@
 <?php namespace synchrotalk\connector;
 
+if (class_exists("\synchrotalk\connector\connector", false))
+  return;
+
 require_once('synchrotalk.plugin/plugin.php');
 require_once('objects/thread.php');
 require_once('objects/notification.php');
