@@ -7,7 +7,7 @@ require_once('synchrotalk.plugin/plugin.php');
 require_once('objects/thread.php');
 require_once('objects/notification.php');
 
-abstract class connector implements \plugin
+abstract class connector implements \synchrotalk\plugin\plugin
 {
   abstract public /* bool */ function sign_in(/* auth or token */ $auth);
 

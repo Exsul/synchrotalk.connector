@@ -5,7 +5,7 @@ if (class_exists("\synchrotalk\connector\auth", false))
 
 require_once('synchrotalk.plugin/plugin.php');
 
-abstract class auth implements \plugin
+abstract class auth implements \synchrotalk\plugin\plugin
 {
   abstract public function sign_in( /* string */ $token);
 
