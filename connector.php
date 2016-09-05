@@ -10,6 +10,7 @@ require_once('objects/notification.php');
 abstract class connector implements \synchrotalk\plugin\plugin
 {
   abstract public /* bool */ function sign_in(/* auth or token */ $auth);
+  abstract public /* token */ function get_token();
 
   public /* notification[] */ function notifications()
   {}
