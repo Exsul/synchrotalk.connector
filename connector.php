@@ -53,6 +53,11 @@ abstract class connector implements \synchrotalk\plugin\plugin
             return $thread;
   }
 
+  public /* string */ function nickname_to_link( /* string */ $nickname )
+  {
+    return "TODO_{$nickname}";
+  }
+
   /* This is workaround for restrictions of plugin system. This is breaking ipc
     but allow to rapidly grow project, without awaiting of better system */
   abstract public /* auth */ function auth();
