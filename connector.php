@@ -3,7 +3,7 @@
 if (class_exists("\synchrotalk\connector\connector", false))
   return;
 
-require_once('synchrotalk.plugin/plugin.php');
+require_once('plugin.php');
 require_once('objects/thread.php');
 require_once('objects/notification.php');
 

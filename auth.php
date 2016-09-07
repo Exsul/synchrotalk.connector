@@ -3,7 +3,7 @@
 if (class_exists("\synchrotalk\connector\auth", false))
   return;
 
-require_once('synchrotalk.plugin/plugin.php');
+require_once('plugin.php');
 
 abstract class auth implements \synchrotalk\plugin\plugin
 {
