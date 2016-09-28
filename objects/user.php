@@ -14,6 +14,7 @@ class user extends owner
 {
   public /* string */ $nickname;
   public /* string[] */ $name;
+  public /* string */ $profile_link;
 
   // Associative array in template of "WxH" => "URI"
   public /* string[] */ $avatars;
